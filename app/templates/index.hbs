@@ -1,0 +1,13 @@
+{{#link-to 'about'}}About{{/link-to}}
+{{#link-to 'contact'}}Contact{{/link-to}}
+<hr>
+
+<h1>Welcome to blah blah blah</h1>
+
+<ul>
+  {{#each model as |rental|}}
+     {{rental-tile rental=rental destroyRental="destroyRental"}} 
+  {{/each}}
+</ul>
+
+{{new-rental save2="save3"}}
