@@ -13,11 +13,6 @@
       </div>
 
       <div class="form-group">
-        <label for="city">City</label>
-        {{input value=city id="city"}}
-      </div>
-
-      <div class="form-group">
         <label for="bedrooms">Number of Bedrooms</label>
         {{input value=bedrooms id="bedrooms"}}
       </div>
@@ -27,9 +22,9 @@
         {{input value=image id="image"}}
       </div>
 
-      <button {{action 'save1'}}>Save</button>
+      <button {{action 'saveRental' city}}>Save</button>
     </form>
   </div>
 {{else}}
-  <button {{action 'rentalFormShow'}}>New Rental</button>
+  <button {{action 'rentalFormShow'}}>New Rental in {{city.name}}</button>
 {{/if}}

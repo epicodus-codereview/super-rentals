@@ -1,0 +1,20 @@
+<h1>{{city.name}}</h1>
+<p>Country: {{city.country}}</p>
+<p>Attractions: {{city.attractions}}</p>
+<hr>
+Rentals available in {{city.name}}:
+<ul>
+  {{#each city.rentals as |rental|}}
+    <li>{{#link-to 'rental' rental}}{{rental.owner}}'s {{rental.type}}{{/link-to}}</li>
+  {{/each}}
+</ul>
+
+<hr>
+
+{{update-city city=city updateCity="updateCity"}}
+
+<button {{action 'destroyCity' city}}>Delete City</button>
+
+<hr>
+
+{{new-rental city=city saveRental="saveRental"}}

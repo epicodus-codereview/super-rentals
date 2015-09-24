@@ -3,10 +3,10 @@ import Ember from 'ember';
 export default Ember.Component.extend({
   updateRentalForm: false,
   actions: {
-    updateRentalForm() {
+    showRentalForm() {
       this.set('updateRentalForm', true);
     },
-    update(rental) {
+    updateRental(rental) {
       var params = {
         owner: this.get('owner'),
         city: this.get('city'),
@@ -15,7 +15,7 @@ export default Ember.Component.extend({
         bedrooms: this.get('bedrooms'),
       };
       this.set('updateRentalForm', false);
-      this.sendAction('update', rental, params);
+      this.sendAction('updateRental', rental, params);
     }
   }
 });

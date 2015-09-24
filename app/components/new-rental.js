@@ -6,7 +6,7 @@ export default Ember.Component.extend({
     rentalFormShow() {
       this.set('addNewRental', true);
     },
-    save1() {
+    saveRental(city) {
       var params = {
         owner: this.get('owner'),
         city: this.get('city'),
@@ -15,7 +15,7 @@ export default Ember.Component.extend({
         bedrooms: this.get('bedrooms'),
       };
       this.set('addNewRental', false),
-      this.sendAction('save2', params);
+      this.sendAction('saveRental', city, params);
     }
 
   }
