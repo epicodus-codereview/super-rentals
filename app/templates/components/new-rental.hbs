@@ -1,3 +1,15 @@
+<!-- 
+This is the template (display) portion of the new-rental component, which in this app is displayed within the single-city component's template. Variables and actions referenced here are defined by components/new-rental.js or passed to the component by the template or component in which it is embedded (in this case by single-city.hbs).
+
+The saveRental and rentalFormShow actions called here and the addNewRental property referenced here are all defined in components/new-rental.js
+
+The city variable used here is passed in to the compoment by single-city.hbs
+
+When the user clicks the save button, the saveRental action is executed (as defined in components/new-rental.js).
+
+The values in the form's input helpers should match the properties as defined in the rental model (models/rental.js), though the city does not need to be included in the form because it is assigned behind the scenes in new-rental.js rather than being chosen by the user.
+-->
+
 {{#if addNewRental}}
   <h1>New Rental</h1>
   <div>

@@ -1,5 +1,14 @@
+<!-- 
+This is the index page, which makes use of the model variable, defined by the index route handler (/app/routes/index.js).
+-->
+
 <h1>Welcome to blah blah blah</h1>
 
+<!--
+EXPLANATION OF BELOW (LOOPING THRU RENTALS):
+We loop thru all rental objects. For each rental object we display our rental-tile component and pass it that rental object, made accessible with the variable name rental.
+(To be more specific, when we say rental=rental, the rental on the right is what we are passing (kinda like a hash value) and the rental on the left is the name under which it can be accessed in the component (kinda like a hash key)).
+-->
 <h2> Rentals </h2>
 <ul>
   {{#each model.rentals as |rental|}}
@@ -9,6 +18,10 @@
 
 <hr>
 
+<!-- 
+EXPLANATION OF BELOW (LOOPING THRU CITIES):
+We loop thru all city objects. Here instead of calling a component for each object I am just linking directly to the city's own page. After following that link we are done with the index route so far as cities are concerned.
+-->
 <h2> Cities </h2>
 <ul>
   {{#each model.cities as |city|}}
@@ -16,4 +29,8 @@
   {{/each}}
 </ul>
 
+<!-- 
+EXPLANATION OF BELOW (NEW CITY SECTION):
+Embed here new-city component and pass it the string "saveCity" (which refers to the name of the index route handler's saveCity action, which we will need to call from within the component). Make that string available within the new-city component as the variable saveCity. This will display the new-city template here.
+-->
 {{new-city saveCity="saveCity"}}

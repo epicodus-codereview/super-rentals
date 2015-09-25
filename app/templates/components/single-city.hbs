@@ -1,3 +1,12 @@
+<!-- 
+This is the template portion of the single-city component, which is displayed in this app within the city template.
+
+The city variable used here comes from the calling template, in this case city.hbs. It was referenced as model in city.hbs, but it was passed in here as a variable named city. It refers to a single city object, because it was defined that way in the city route handler (routes/city.js)).
+
+Because city has a rentals property, we can loop through city.rentals. If we are saving everything correctly, this should only include rentals associated with this city.
+-->
+
+<!-- CITY SHOW PAGE INFO, INCLUDING LIST OF RENTALS BELONGING TO THIS CITY OBJECT -->
 <h1>{{city.name}}</h1>
 <p>Country: {{city.country}}</p>
 <p>Attractions: {{city.attractions}}</p>
@@ -11,10 +20,13 @@ Rentals available in {{city.name}}:
 
 <hr>
 
+<!-- UPDATE CITY: below line displays here the update-city component, passes it the city variable and passes along a reference to the city route handler's updateCity action, which was in turn passed in here by city.hbs -->
 {{update-city city=city updateCity="updateCity"}}
 
+<!-- DESTROY CITY: below line creates a button that, when clicked, calls the destroyCity action in this component's js file (/app/components/single-city.js) and passes it the city object -->
 <button {{action 'destroyCity' city}}>Delete City</button>
 
 <hr>
 
+<!-- ADD RENTAL TO CITY: below line displays here the new-rental component, passes it the city variable and passes along a reference to the city route handler's saveRental action, which was in turn passed in here by city.hbs -->
 {{new-rental city=city saveRental="saveRental"}}

@@ -1,3 +1,13 @@
+<!-- 
+This is the template (display) portion of the new-city component, which in this app is displayed within the index.hbs template. Variables and actions referenced here are defined by components/new-city.js or passed to the component by the template or component in which it is embedded (in this case by index.hbs).
+
+The saveCity and showCityForm actions called here and the addCityForm property referenced here are all defined in components/new-city.js
+
+When the user clicks the save button, the saveCity action is executed (as defined in components/new-city.js).
+
+The values in the form's input helpers should match the properties as defined in the city model (models/city.js).
+-->
+
 {{#if addCityForm}}
   <h1>New City</h1>
     <div>

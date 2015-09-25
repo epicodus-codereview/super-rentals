@@ -1,3 +1,14 @@
+// This is the route handler for the city route / template.
+
+// SETUP MODEL:
+// The route handler returns the city model, which is defined here as a single city object (found based on the params passed in here from the URL, as setup in the router.js file.)
+// This model (representing a single city object) can be accessed in the city template by the variable model
+
+// DATABASE-RELATED ACTIONS:
+// We can also include here actions that update or destroy the city record in Firebase.
+// Create city was already taken care of in the index route, but here we have update and destroy for city.
+// We also have the action to add a new rental here, as this happens from within the city show page.
+
 import Ember from 'ember';
 
 export default Ember.Route.extend({
